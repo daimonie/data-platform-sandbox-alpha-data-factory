@@ -1,0 +1,17 @@
+{
+	"name": "RestService1",
+	"properties": {
+		"description": "This is just an open dataset that gets updated every once in a bit (RIVM)",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://data.rivm.nl/covid-19/COVID-19_varianten.csv",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
