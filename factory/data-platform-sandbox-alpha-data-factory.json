@@ -1,0 +1,9 @@
+{
+	"name": "data-platform-sandbox-alpha-data-factory",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ef070d5f-2824-4dbd-8717-7000685d2b82",
+		"tenantId": "5f485a94-1efe-4b8f-ad7e-1cb1e3ee3db8"
+	}
+}
