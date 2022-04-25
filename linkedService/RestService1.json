@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://data.rivm.nl",
+			"url": "https://data.rivm.nl/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		},
