@@ -6,7 +6,7 @@
 		"type": "RestService",
 		"typeProperties": {
 			"url": "https://data.rivm.nl/",
-			"enableServerCertificateValidation": false,
+			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		},
 		"connectVia": {
