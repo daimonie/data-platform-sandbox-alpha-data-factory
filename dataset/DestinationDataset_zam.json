@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_zam",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "rivm-gemeentes",
+				"fileSystem": "data"
+			}
+		},
+		"schema": {}
+	}
+}
