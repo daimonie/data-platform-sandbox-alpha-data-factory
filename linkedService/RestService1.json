@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://data.rivm.nl/covid-19/COVID-19_varianten.csv",
+			"url": "https://data.rivm.nl/",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		},
