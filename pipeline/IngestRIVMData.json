@@ -1,0 +1,145 @@
+{
+	"name": "IngestRIVMData",
+	"properties": {
+		"description": "Ingest RIVM Data",
+		"activities": [
+			{
+				"name": "Copy_zam",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "arrayOfObjects"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"validateDataConsistency": false,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureDataLakeStorage1",
+								"type": "LinkedServiceReference"
+							}
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['Version']"
+								},
+								"sink": {
+									"path": "$['Version']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Date_of_report']"
+								},
+								"sink": {
+									"path": "$['Date_of_report']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Date_of_publication']"
+								},
+								"sink": {
+									"path": "$['Date_of_publication']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Municipality_code']"
+								},
+								"sink": {
+									"path": "$['Municipality_code']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Municipality_name']"
+								},
+								"sink": {
+									"path": "$['Municipality_name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Province']"
+								},
+								"sink": {
+									"path": "$['Province']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Total_reported']"
+								},
+								"sink": {
+									"path": "$['Total_reported']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Hospital_admission']"
+								},
+								"sink": {
+									"path": "$['Hospital_admission']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Deceased']"
+								},
+								"sink": {
+									"path": "$['Deceased']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_zam",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_zam",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
