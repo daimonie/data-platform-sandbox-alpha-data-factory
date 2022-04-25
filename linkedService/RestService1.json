@@ -6,7 +6,7 @@
 		"type": "RestService",
 		"typeProperties": {
 			"url": "https://data.rivm.nl/covid-19/COVID-19_varianten.csv",
-			"enableServerCertificateValidation": true,
+			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		},
 		"connectVia": {
